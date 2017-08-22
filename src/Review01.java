@@ -2,7 +2,6 @@
  * Created by hr on 2017/8/22.
  */
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class Review01 {
@@ -12,7 +11,36 @@ public class Review01 {
 //        showForEach();//增强for循环
 //        showNumberAndMath();
 //        showArray();//Arrays;排序等操作
-        showMath(); //数学类操作
+//        showMath(); //数学类操作
+        showCharacter();//字符类操作
+    }
+
+    /* Character类 :判断是否数字、字符、大小写，转换大小写等*/
+    public static void showCharacter() {
+        Character c1 = new Character('a');
+        Character c2 = 'b';
+        System.out.println(c1 + ":" + c2);
+
+        /*判断是否是数字*/
+        char cNum = '2';
+        boolean isNum = Character.isDigit(cNum);
+        System.out.println(cNum + " is a character ?:" + isNum);
+
+        /*判断是否是字符*/
+        char cChar = 'a';
+        boolean isChar = Character.isLetter(cChar);
+        boolean isLowerCase = Character.isLowerCase(cChar);
+        boolean isUpperCase = Character.isUpperCase(cChar);
+
+        System.out.println(cChar + " is a Character ? :" + isChar);
+        System.out.println(cChar + " is a LowerCase ? :" + isLowerCase);
+        System.out.println(cChar + " is a UpperCase ? :" + isUpperCase);
+
+        /*转换大小写*/
+        System.out.println('a' + " upperCase is :" + Character.toUpperCase('a'));
+        System.out.println('a' + " toTittle is :" + Character.toTitleCase('a'));
+
+
     }
 
     /* 数学类 :弧度和角度转换，随机数，cos之类*/
