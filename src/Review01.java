@@ -11,23 +11,15 @@ public class Review01 {
 //        showArray();//Arrays的一些操作
 //        showForEach();//增强for循环
 //        showNumberAndMath();
-        showArray();//排序等操作
+        showArray();//Arrays;排序等操作
+//        showMath(); //数学类操作
     }
 
+    /* 数学类 */
+    public static void showMath() {
+        /*转换角度*/
+        double mAngle = 3.1415926;
 
-    public static void showNumberAndMath() {
-        Integer a = 5;
-
-        Integer[] arr = {5, 4, 3, 2, 1};
-        List<Integer> al;
-        al = Arrays.asList(arr);
-        System.out.println(Arrays.toString(al.toArray()));
-
-        int res = (int) Collections.min(Arrays.asList(arr));
-        System.out.println(res);
-
-        Arrays.sort(arr);
-        System.out.println(arr);
     }
 
     /*数组转list*/
@@ -91,8 +83,19 @@ public class Review01 {
         Arrays.fill(fillArr, 20);
         System.out.println("填充数组：" + Arrays.toString(fillArr));
 
+        /*最小值*/
+        Integer[] minA = {5, 3, 66, 7, 5, 8};
+        int minRes = (int)Collections.min(Arrays.asList(minA));//最小值
+        int maxRes = (int)Collections.max(Arrays.asList(minA));//最大值
+
+        System.out.println(Arrays.toString(minA));
+        System.out.println("最大值：" + maxRes + "最小值：" + minRes);
+
+
 //        /*map reduce里面的，先不看*/
 //        int[] sptArr = {1, 2, 3, 4, 5};
 //        Arrays.spliterator(sptArr);
     }
+
+
 }
