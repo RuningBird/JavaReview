@@ -11,15 +11,38 @@ public class Review01 {
 //        showArray();//Arrays的一些操作
 //        showForEach();//增强for循环
 //        showNumberAndMath();
-        showArray();//Arrays;排序等操作
-//        showMath(); //数学类操作
+//        showArray();//Arrays;排序等操作
+        showMath(); //数学类操作
     }
 
-    /* 数学类 */
+    /* 数学类 :弧度和角度转换，随机数，cos之类*/
     public static void showMath() {
-        /*转换角度*/
-        double mAngle = 3.1415926;
+        /*转换为角度*/
+        double mAngle = Math.PI;//弧度
+        System.out.println("转换为角度：" + Math.toDegrees(mAngle));
 
+         /*cos:要转换为弧度计算*/
+        double cosN = Math.toDegrees(Math.PI);
+        System.out.println("cos(" + cosN + ") = " + Math.cos(Math.PI));// 弧度计算
+
+        /*角度转化为弧度*/
+        double mRadians = Math.toDegrees(Math.PI);
+        System.out.println("转化为弧度：" + Math.toRadians(mRadians));
+
+        /*随机数*/
+        Random rand = new Random();
+        System.out.println("----------------------随机数---------------------------");
+        for (int i = 0; i < 20; i++) {
+            int rNum = rand.nextInt(10);
+            System.out.print(rNum + " ");
+        }
+        /*[a,b]之间的随机数*/
+        System.out.println("\n----------------------随机数[a,b]---------------------------");
+        int rA = 1, rB = 5;
+        for (int i = 0; i < 20; i++) {
+            int rNum = rand.nextInt(rB - rA + 1) + rA;
+            System.out.print(rNum + " ");
+        }
     }
 
     /*数组转list*/
@@ -85,8 +108,13 @@ public class Review01 {
 
         /*最小值*/
         Integer[] minA = {5, 3, 66, 7, 5, 8};
-        int minRes = (int)Collections.min(Arrays.asList(minA));//最小值
-        int maxRes = (int)Collections.max(Arrays.asList(minA));//最大值
+        int[] minB = {5, 3, 66, 7, 5, 8};
+//        int maxRes2 = (int) Collections.max(Arrays.asList(minB));//因为有泛型，泛型里面不能为<int>
+
+
+        int minRes = (int) Collections.min(Arrays.asList(minA));//最小值
+        int maxRes = (int) Collections.max(Arrays.asList(minA));//最大值
+
 
         System.out.println(Arrays.toString(minA));
         System.out.println("最大值：" + maxRes + "最小值：" + minRes);
