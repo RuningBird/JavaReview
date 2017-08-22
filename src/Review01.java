@@ -1,18 +1,60 @@
-/**
- * Created by hr on 2017/8/22.
- */
-
 import java.util.*;
 
-public class Review01 {
 
+public class Review01 {
     public static void main(String args[]) {
 //        showArray();//Arrays的一些操作
 //        showForEach();//增强for循环
 //        showNumberAndMath();
 //        showArray();//Arrays;排序等操作
 //        showMath(); //数学类操作
-        showCharacter();//字符类操作
+//        showCharacter();//字符类操作
+        showString();
+    }
+
+    /*String 类：替换，格式化，截取，子串，比较，是否是数字等*/
+    public static void showString() {
+
+        /*字符串连接*/
+        String sCat1 = "123";
+        String sCat2 = "456";
+        String catRes = sCat1.concat(sCat2);
+        System.out.println("字符串连接：" + catRes);
+
+        /*字符串格式化*/
+        String sFormat;
+        sFormat = String.format("%.2f 的整型形式为：%d ", 5.2, 5);
+        System.out.println("格式化字符串：" + sFormat);
+
+        /*字符串拷贝*/
+        String sCopy = String.copyValueOf("012345".toCharArray(), 0, 2);//拷贝范围[a, b)
+        System.out.println("字符串拷贝" + sCopy);
+
+        /*字符串比较*/
+        System.out.println("字符串比较1:" + "abc".compareTo("bcd"));
+        System.out.println("字符串比较2:" + "abc".compareToIgnoreCase("bcd"));
+
+        /*截取指定长度的字符数组，从字符串中*/
+        String sGetChar = "012345678";
+        char[] resCharArr = new char[3 - 1];
+        sGetChar.getChars(1, 3, resCharArr, 0);
+        System.out.println("截取的字符串：" + Arrays.toString(resCharArr));
+
+        /*截取字串*/
+        String sSub = "0123456789";
+        String subRes = sSub.substring(1,5);//[a, b)
+        System.out.println("字串为：" + subRes);
+
+        /*判断字符串是否是数字*/
+        String sNum = "123";
+        boolean isNum =  sNum.matches("^[0-9]*$");
+        System.out.println(sNum + " is a number ? : " + isNum);
+
+        /*替换字符串*/
+        String sReplace = "0123456789";
+        String resReplace = sReplace.replace("123","abc");
+        System.out.println("old:" + sReplace + "  replaced str:" + resReplace);
+
     }
 
     /* Character类 :判断是否数字、字符、大小写，转换大小写等*/
@@ -39,8 +81,6 @@ public class Review01 {
         /*转换大小写*/
         System.out.println('a' + " upperCase is :" + Character.toUpperCase('a'));
         System.out.println('a' + " toTittle is :" + Character.toTitleCase('a'));
-
-
     }
 
     /* 数学类 :弧度和角度转换，随机数，cos之类*/
